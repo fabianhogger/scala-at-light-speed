@@ -40,9 +40,68 @@ object FunctionalProgramming extends App {
   //Higher Order Functions
   //map method of list object
   val aMappedList = List(1,2,3).map(x => x + 1)
-  println(aMappedList)
-  println(aMappedList)
 
+  //flat-map
+  val aFlatMappedList = List(1,2,3).flatMap(x=>List(x,2 * x))
+  println(aFlatMappedList)
+  //curly brace syntax
+  val aFlatMappedList2 = List(1,2,3).flatMap{ x=>
+    List(x,2 * x)
+  }//alternative
+
+  //filter function
+  val aFilteredList = List(1,2,3,4,5).filter(x => x<= 3)
+  //shortest syntax
+  val aFilteredList2 = List(1,2,3,4,5).filter(_ <=3)
+  println(aFilteredList2)
+  /*these functions return a new instance of a list
+  * since values are immutable in scala
+  * they can be chained
+   */
+  //all pairs between the numbers 1,2,3 and letters a,b,c
+  val allPairs = List(1,2,3).flatMap(x=> List('a','b','c').map(letter => s"$x-$letter"))
+  println(allPairs)
+  //for comprehensions are a way to write these chains more clearly
+  val alternativePairs = for {
+    number <- List(1,2,3)
+    letter <- List('a','b','c')
+  } yield s"$number-$letter"
+
+  /** collections
+   *
+   *
+   * */
+  val  aList = List(1,2,3,4,5)
+  val firstElement = aList.head
+  val rest = aList.tail
+  val aPrependedList = 0 :: aList //List(0,1,2,3,4,5)
+  val anExtendedList = 0 +: aList :+ 6 //List(0,1,2,3,4,5,6)
+  // sequences
+  val aSequence: Seq[Int] = Seq(1,2,3) // Seq.apply(1,2,3)
+  val accessedElement = aSequence(1)
+  println(aSequence)
+  println(accessedElement)
+  //vectors: fast Seq implementation
+  val aVector = Vector(1,2,3,4,5)
+  val fiV= aVector(0)
+  //sets = no duplicates
+  val aSet = Set(1,2,3,4,1,2,3)
+  val setHas5 = aSet.contains(5)
+  val anAddedSet = aSet + 5
+  println(anAddedSet)
+  // ranges
+  val aRange = 1 to 1000
+  val twoByTwo = aRange.map(x=> 2*x).toList
+  println(twoByTwo)
+  // tuples
+  val aTuple =("Bon","JOvi",1992,"Rock")
+  // maps
+  val aPhonebook=Map[String,Int](("al",1),"gr"->2)
+  println((aPhonebook)
+
+
+
+  )
 
 
 

@@ -1,7 +1,7 @@
 package com.rockthejvm
 
 
-class ObjectOrientation extends  App {
+object  ObjectOrientation extends  App {
   class Animal {
     val age: Int = 0
 
@@ -104,9 +104,9 @@ class ObjectOrientation extends  App {
   val aList: List[Int] = List(1, 2, 3)
   val first = aList.head
   val test = aList.tail
-  val aStringList = new Mygen[String]
-  val firstString = aStringList.head
-  println(firstString)
+  //val aStringList = new Mygen[String]
+  //val firstString = aStringList.head
+  //println(firstString)
 
 }
 

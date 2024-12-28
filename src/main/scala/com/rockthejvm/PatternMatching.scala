@@ -14,7 +14,7 @@ object PatternMatching extends App {
   val bob= Person("Bob", 43)
   //case class decomposition
   val personGreeting = bob match{
-    case Person(n,a) =>s"Hi my name is $n and i am 4a years old."
+    case Person(n,a) =>s"Hi my name is $n and i am $a years old."
     case _ => "Something else"
   }
 
